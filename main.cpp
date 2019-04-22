@@ -1,23 +1,11 @@
-#include<iostream>
-#include<vector>
-#include<string>
+#ifndef HASH_TABLE_H
+#define HASH_TABLE_H
+
+#include "HashTable.h"
+
+#endif
 
 using namespace std;
-template<typename T>
-class HashTable{
-public:
-	void size(){};
-	void empty(){};
-	void find(int key){};
-	void erase(int key){};
-	void insert(int key, T element){};
-	void clear(){};
-private:
-	int index;
-	vector<T><T> colisions;
-};
-
-int main(){
-	HashTable H1;
-	return 0;
+int main() {
+	HashTable<int> hash();	
 }
