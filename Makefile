@@ -1,5 +1,5 @@
 CXX = g++
-CXXGLAGS = -g
+CXXFLAGS = -g
 
 all: run 
 
