@@ -21,7 +21,7 @@ public:
 		hash(10);
 	}
 	
-	template<typename T>
+	template<class T>
 	int size() {
 		int total = 0;
 		for( vector<pair<int,T>> v : hash ) {
@@ -38,7 +38,7 @@ public:
 		return (this.size() == 0);
 	}
 	
-	template<typename T>
+	template<class T>
 	T* find(int key) {
 		int k = key;
 		int m = size();
@@ -55,7 +55,7 @@ public:
 		}
 	}
 
-	template<typename T>	
+	template<class T>	
 	void erase(int key) {
 		int k = key;
 		int m = size();
@@ -69,7 +69,7 @@ public:
 		}
 	}
 	
-	template<typename T>	
+	template<class T>	
 	bool insert(int key, T element) {
 		int k = key;
 		int m = size();
