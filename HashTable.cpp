@@ -41,8 +41,17 @@ public:
 
 	bool erase(int key); //If erase was successfull
 	
-	bool insert(int key, T element); //If it was successfull
-	
+	bool insert(int key, T element) {
+		int k = key;
+		int m = size();
+		int bob = k % m;
+		if( hashtable[bob] != NULL ) {
+			return false;
+		} else {
+			hashtable[bob] = pair(key, element);
+			return true;
+		}
+	}
 	void clear();
 private:
 	int index;
