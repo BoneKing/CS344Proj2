@@ -13,14 +13,15 @@ class HashTable{
 public:
 	HashTable() {
 		index = 0;
-		hashtable(0);
+		hash(0);
 	}
 
 	HashTable(int num) {
 		index = 0;
-		hashtable(10);
+		hash(10);
 	}
-
+	
+	template<typename T>
 	int size() {
 		int total = 0;
 		for( vector<pair<int,T>> v : hash ) {
@@ -35,8 +36,9 @@ public:
 	
 	bool empty() {
 		return (this.size() == 0);
-	};
+	}
 	
+	template<typename T>
 	T* find(int key) {
 		int k = key;
 		int m = size();
@@ -53,6 +55,7 @@ public:
 		}
 	}
 
+	template<typename T>	
 	void erase(int key) {
 		int k = key;
 		int m = size();
@@ -66,6 +69,7 @@ public:
 		}
 	}
 	
+	template<typename T>	
 	bool insert(int key, T element) {
 		int k = key;
 		int m = size();
@@ -81,6 +85,6 @@ public:
 	void clear();
 private:
 	int index;
-	vector<vector<pair<int, T>>> hashtable;
-};
+	vector<vector<pair<int, T>>> hash;
+}
 
