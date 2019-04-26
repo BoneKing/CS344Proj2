@@ -36,7 +36,19 @@ public:
 	};
 	
 	T* find(int key) {
-		
+		int k = key;
+		int m = size();
+		int bill = k % m;
+
+		if( hashtable[bill] != NULL ) {
+			for( pair<int,T> p : hashtable[bill] )
+				if( p->first == key ) {
+					T* buck = new T* ( p->second )
+					return buck;
+		} else {
+			void* fuck = nullptr;
+			return fuck;
+		}
 	}
 
 	bool erase(int key) {
