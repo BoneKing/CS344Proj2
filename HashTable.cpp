@@ -10,6 +10,10 @@ using namespace std;
 
 template<class T>
 class HashTable{
+private:
+	int index;
+	vector<vector<pair<int, T>>> hash;
+	
 public:
 	HashTable() {
 		index = 0;
@@ -80,9 +84,5 @@ public:
 		
 	void clear() {	
 	}
-		
-private:
-	int index;
-	vector<vector<pair<int, T>>> hash;
 };
 
