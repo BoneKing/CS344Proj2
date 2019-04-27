@@ -13,12 +13,12 @@ class HashTable{
 public:
 	HashTable() {
 		index = 0;
-		hash(0);
+		hash<T>(0);
 	}
 
 	HashTable(int num) {
 		index = 0;
-		hash(10);
+		hash<T>(10);
 	}
 	
 	int size() {
@@ -42,7 +42,7 @@ public:
 		int m = size();
 		int bill = k % m;
 
-		if( hash[bill] != NULL ) {
+		if( hash<T>[bill] != NULL ) {
 			for( pair<int,T> p : hash[bill] )
 				if( p->first == key ) {
 					T* buck = new T* ( p->second )
@@ -82,5 +82,5 @@ public:
 private:
 	int index;
 	vector<vector<pair<int, T>>> hash;
-}
+};
 
