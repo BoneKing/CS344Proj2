@@ -17,12 +17,12 @@ private:
 public:
 	HashTable() {
 		index = 0;
-		hash<T>(0);
+		hash.resize(7);
 	}
 
 	HashTable(int num) {
 		index = 0;
-		hash<T>(10);
+		hash<T>(num);
 	}
 	
 	int size() {
