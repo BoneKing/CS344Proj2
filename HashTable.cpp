@@ -78,7 +78,7 @@ public:
 		if( hash[bob] != NULL ) {
 			return false;
 		} else {
-			hash[bob] = pair(key, element);
+			hash[bob] = make_pair(key, element);
 			return true;
 		}
 	}
