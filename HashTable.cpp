@@ -78,7 +78,9 @@ public:
 		}
 	}
 		
-	void clear();
+	void clear() {	
+	}
+		
 private:
 	int index;
 	vector<vector<pair<int, T>>> hash;
