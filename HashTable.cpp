@@ -22,7 +22,7 @@ public:
 
 	HashTable(int num) {
 		index = 0;
-		hash<T>(num);
+		hash.resize(num);
 	}
 	
 	int size() {
@@ -46,7 +46,7 @@ public:
 		int m = size();
 		int bill = k % m;
 
-		if( hash<T>[bill] != NULL ) {
+		if( hash[bill] != NULL ) {
 			for( pair<int,T> p : hash[bill] )
 				if( p->first == key ) {
 					T* buck = new T* ( p->second );
