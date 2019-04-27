@@ -10,51 +10,79 @@ using namespace std;
 
 template<class T>
 class HashTable{
+private:
+	int index;
+	vector<vector<pair<int, T>>> hash;
+	
 public:
 	HashTable() {
 		index = 0;
-		hashtable(0);
+		hash.resize(7);
 	}
 
 	HashTable(int num) {
 		index = 0;
-		hashtable(10);
+		hash.resize(num);
 	}
-
+	
 	int size() {
 		int total = 0;
-		for(vector<pair<int,T>> v : hashtable){
-			for(pair<int,T> p : v) {
-				if( p->first != NULL )
+		for( vector<pair<int,T>> v : hash ) {
+			for(pair<int,T> p : v ) {
+				if( p -> first != NULL ) {
 					total++;
+				}
 			}
 		}
-	};
+		return total;
+	}
 	
 	bool empty() {
 		return (this.size() == 0);
-	};
+	}
 	
 	T* find(int key) {
-		
+		int k = key;
+		int m = size();
+		int bill = k % m;
+
+		if( hash[bill] != NULL ) {
+			for( pair<int,T> p : hash[bill] )
+				if( p->first == key ) {
+					T* buck = new T* ( p->second );
+					return buck;
+				} else {
+					void* fuck = nullptr;
+					return fuck;
+				}
+		}
 	}
 
-	bool erase(int key); //If erase was successfull
+	void erase(int key) {
+		int k = key;
+		int m = size();
+		int bill = k % m;
+
+		if( hash[bill] != NULL ) {
+			for( pair<int,T> p : hash[bill] )
+				if( p->first == key ) {
+					delete p;
+				}
+		}
+	}
 	
 	bool insert(int key, T element) {
 		int k = key;
 		int m = size();
 		int bob = k % m;
-		if( hashtable[bob] != NULL ) {
+		if( hash[bob] != NULL ) {
 			return false;
 		} else {
-			hashtable[bob] = pair(key, element);
+			hash[bob] = make_pair(key, element);
 			return true;
 		}
 	}
-	void clear();
-private:
-	int index;
-	vector<vector<pair<int, T>>> hashtable;
+		
+	void clear() {}
 };
 
