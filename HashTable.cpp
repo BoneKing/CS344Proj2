@@ -51,9 +51,10 @@ public:
 				if( p->first == key ) {
 					T* buck = new T* ( p->second );
 					return buck;
-		} else {
-			void* fuck = nullptr;
-			return fuck;
+				} else {
+					void* fuck = nullptr;
+					return fuck;
+				}
 		}
 	}
 
