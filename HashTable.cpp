@@ -49,7 +49,7 @@ public:
 		if( hash<T>[bill] != NULL ) {
 			for( pair<int,T> p : hash[bill] )
 				if( p->first == key ) {
-					T* buck = new T* ( p->second )
+					T* buck = new T* ( p->second );
 					return buck;
 		} else {
 			void* fuck = nullptr;
@@ -82,7 +82,6 @@ public:
 		}
 	}
 		
-	void clear() {	
-	}
+	void clear() {}
 };
 
